@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(2,0,36);
+    font-family: Poppins;
+    margin: auto;
+    user-select: none;
+}
+
+
+.line {
+    height: 10px;
+    width: 100%;
+    background-color: rgb(34, 109, 180);
+    background: linear-gradient(#0061ff,#60efff);
+    height: 100px;
+    text-align: center;
+    font-size: 60px;
+    padding-top: 20px;
+    font-weight: 800;
+    transition: all 0.6s linear;
+    border-bottom: 4px solid #0061ff;
+    color: rgb(247, 247, 247);
+}
+.line:hover{
+    color: hotpink;
+    cursor: pointer;
+    background: linear-gradient(90deg, hsla(4, 48%, 94%, 1) 0%, hsla(66, 70%, 80%, 1) 50%, hsla(226, 67%, 76%, 1) 100%);
+
+
+}
+
+.piano-keys {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: 80%;
+    margin: auto;
+    align-items: flex-start;
+    margin-top: 0;
+}
+
+.key {
+    display: block;
+    position: relative;
+    border: solid black;
+    background: red;
+    border: 1px solid  black;
+    width: 40px;
+    color: black;
+    padding: 10px;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 0 0px 4px  4px; /* top right bottom left */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
+
+}
+.key span {
+    position: absolute;
+    bottom:  2px;
+    font-size: 16px;
+}
+
+.white {
+    background: #fff;
+}
+
+.black {
+    color: wheat;
+    background: black;
+    max-height: 100px;
+    border: 1px solid  rgb(255, 255, 255);
+    margin: 0 -20px;
+    z-index: 20;
+}
+
+.black.active {
+    background: rgb(59, 147, 219);
+    transform: skew(-2deg) rotate(2deg);
+    scale: 1.06;
+
+}
+.white.active {
+    scale: 1.02;
+    background: rgb(226, 171, 234);
+    transform: rotate(-2deg);
+    transform: skew(2deg) rotate(-2deg);
+}
+
+.show {
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: larger;
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.line {
+    background: linear-gradient(270deg, #4992e6, #da66f3);
+    background-size: 400% 400%;
+
+    animation: AnimationName 10s ease infinite;
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@media screen and (max-width:700px) {
+    .piano-keys {
+        transform: rotate(90deg) translateX(35%);
+    scale: 1.5;
+    }
+
+}
